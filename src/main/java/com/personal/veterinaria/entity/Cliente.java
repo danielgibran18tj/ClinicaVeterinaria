@@ -26,15 +26,11 @@ public class Cliente {
     @Column(name = "numero_celular", nullable = false,length = 50)
     private String numeroCelular;
 
-    @Column(length = 50, unique = true)
+    @Column(length = 50)
     private String email;
 
-    // Relación muchos a uno con Sucursal
-    @ManyToOne
-    @JoinColumn(name = "id_sucursal")
-    private Sucursal idSucursal;
-
     // Relación 1 a muchos con Mascota
-    @OneToMany(mappedBy = "idCliente")
+    @OneToMany(mappedBy = "cliente")
     private List<Mascota> idMascota;
+
 }

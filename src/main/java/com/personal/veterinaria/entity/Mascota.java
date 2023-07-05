@@ -6,16 +6,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "mascota")
 @Getter
 @Setter
 @NoArgsConstructor
 public class Mascota {
+    // Relación 1 a muchos con Consulta
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_mascota", nullable = false, length = 15)
+    @Column(name = "id_mascota", nullable = false)
     private Integer idMascota;
+
+    // Relación muchos a uno con Cliente
+    /*@Id
+    @Column(name = "id_cliente", nullable = false, length = 15)
+    private Integer idCliente;*/
 
     @Column(nullable = false, length = 60)
     private String nombre;
@@ -29,13 +37,13 @@ public class Mascota {
     @Column(nullable = false, length = 5)
     private Integer edad;
 
-    // Relación muchos a uno con Cliente
-    @ManyToOne
-    @JoinColumn(name = "id_cliente")
-    @JsonIgnore     //ignorando este parametro porque haria un llamado recursivo infinito en mi get de OrderEntity
-    private Cliente idCliente;
+    @OneToMany(mappedBy = "mascota", fetch = FetchType.EAGER)
+    private List<Consulta> idConsultaMascota;
 
-    // Relación 1 a 1 con Consulta
-    @OneToOne(mappedBy = "idMascota")
-    private Consulta idConsulta;
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente", insertable = false, updatable = false)
+    //@JsonIgnore
+    private Cliente cliente;
+
+
 }

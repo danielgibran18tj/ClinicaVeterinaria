@@ -30,9 +30,9 @@ public class Sucursal {
     @Column(length = 50, unique = true)
     private String email;
 
-    // Relación 1 a muchos con Cliente
+    /* Relación 1 a muchos con Cliente
     @OneToMany(mappedBy = "idSucursal")
-    private List<Cliente> idCliente;
+    private List<Cliente> idCliente;*/
 
     // Relación 1 a muchos con Empleado
     @OneToMany(mappedBy = "idSucursal")

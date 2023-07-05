@@ -9,13 +9,18 @@ import java.util.List;
 
 @Entity
 @Table(name = "empleado")
+//@IdClass(EmpleadoClienteId.class)
 @Getter
 @Setter
 @NoArgsConstructor
 public class Empleado {
+    // Relación 1 a muchos con Consulta
     @Id
     @Column(name = "id_empleado", nullable = false, length = 15)
     private Integer idEmpleado;
+
+    @OneToMany(mappedBy = "empleado")
+    private List<Consulta> idConsultaEmpleado;
 
     @Column(nullable = false, length = 60)
     private String nombre;
@@ -31,10 +36,7 @@ public class Empleado {
 
     // Relación muchos a uno con Sucursal
     @ManyToOne
-    @JoinColumn(name = "id_sucursal")
+    @JoinColumn(name = "id_sucursal", referencedColumnName = "id_sucursal")
     private Sucursal idSucursal;
 
-    // Relación 1 a muchos con Consulta
-    @OneToMany(mappedBy = "idEmpleado")
-    private List<Consulta> idConsultas;
 }
