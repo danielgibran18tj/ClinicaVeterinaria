@@ -1,12 +1,11 @@
 package com.personal.veterinaria.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "cliente")
@@ -29,4 +28,13 @@ public class Cliente {
 
     @Column(length = 50, unique = true)
     private String email;
+
+    // Relación muchos a uno con Sucursal
+    @ManyToOne
+    @JoinColumn(name = "id_sucursal")
+    private Sucursal idSucursal;
+
+    // Relación 1 a muchos con Mascota
+    @OneToMany(mappedBy = "idCliente")
+    private List<Mascota> idMascota;
 }
