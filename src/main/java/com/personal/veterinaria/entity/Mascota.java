@@ -20,11 +20,6 @@ public class Mascota {
     @Column(name = "id_mascota", nullable = false)
     private Integer idMascota;
 
-    // Relación muchos a uno con Cliente
-    /*@Id
-    @Column(name = "id_cliente", nullable = false, length = 15)
-    private Integer idCliente;*/
-
     @Column(nullable = false, length = 60)
     private String nombre;
 
@@ -42,7 +37,7 @@ public class Mascota {
 
     @ManyToOne
     @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente", insertable = false, updatable = false)
-    //@JsonIgnore
+    @JsonIgnore
     private Cliente cliente;
 
 

@@ -22,7 +22,7 @@ public class Consulta {
 
     @ManyToOne
     @JoinColumn(name = "id_mascota", referencedColumnName = "id_mascota", insertable = false, updatable = false)
-    //@JsonIgnore
+    @JsonIgnore
     private Mascota mascota;
 
     // Relación muchos a uno con Empleado
@@ -32,6 +32,7 @@ public class Consulta {
 
     @ManyToOne
     @JoinColumn(name = "id_empleado", referencedColumnName = "id_empleado", insertable = false, updatable = false)
+    @JsonIgnore
     private Empleado empleado;
 
     @Column(nullable = false, length = 60, columnDefinition = "timestamp")

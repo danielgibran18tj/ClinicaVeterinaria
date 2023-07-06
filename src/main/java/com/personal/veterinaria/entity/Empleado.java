@@ -1,5 +1,6 @@
 package com.personal.veterinaria.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "empleado")
-//@IdClass(EmpleadoClienteId.class)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -37,6 +37,7 @@ public class Empleado {
     // Relación muchos a uno con Sucursal
     @ManyToOne
     @JoinColumn(name = "id_sucursal", referencedColumnName = "id_sucursal")
+    @JsonIgnore
     private Sucursal idSucursal;
 
 }

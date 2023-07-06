@@ -1,5 +1,6 @@
 package com.personal.veterinaria.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,10 +30,6 @@ public class Sucursal {
 
     @Column(length = 50, unique = true)
     private String email;
-
-    /* Relación 1 a muchos con Cliente
-    @OneToMany(mappedBy = "idSucursal")
-    private List<Cliente> idCliente;*/
 
     // Relación 1 a muchos con Empleado
     @OneToMany(mappedBy = "idSucursal")
