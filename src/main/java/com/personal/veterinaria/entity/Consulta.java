@@ -36,9 +36,9 @@ public class Consulta {
     private Empleado empleado;
 
     @Column(nullable = false, length = 60, columnDefinition = "timestamp")
-    private String fecha;
+    private LocalDateTime fecha;
 
     @Column(length = 50)
     private String antecedente;
-
+    
 }
