@@ -20,4 +20,12 @@ public class EmpleadoServicio {
         List<Empleado> empleados = this.empleadoRepository.findAll();
         return empleados;
     }
+
+    public Empleado save(Empleado empleado){
+        return this.empleadoRepository.save(empleado);
+    }
+
+    public boolean exists(int idEmpleado){
+        return this.empleadoRepository.existsById(idEmpleado);
+    }
 }

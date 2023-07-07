@@ -4,9 +4,7 @@ import com.personal.veterinaria.entity.Empleado;
 import com.personal.veterinaria.service.EmpleadoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,4 +22,19 @@ public class EmpleadoController {
     public ResponseEntity<List<Empleado>> getAll(){
         return ResponseEntity.ok(this.empleadoServicio.getAll());
     }
+
+    @PostMapping
+    public ResponseEntity<Empleado> agg(@RequestBody Empleado empleado){
+        if (empleado.getIdEmpleado()== null || !this.empleadoServicio.exists(empleado.getIdEmpleado())){
+            return ResponseEntity.ok(this.empleadoServicio.save(empleado));
+        }
+        return ResponseEntity.badRequest().build();
+    }
+
+    @PutMapping
+    public ResponseEntity<Empleado> update(@RequestBody Empleado empleado){
+        if (empleado.getIdEmpleado()!= null && this.empleadoServicio.exists(empleado.getIdEmpleado())){
+            return ResponseEntity.ok(this.empleadoServicio.save(empleado));
+        }
+        return ResponseEntity.badRequest().build();    }
 }

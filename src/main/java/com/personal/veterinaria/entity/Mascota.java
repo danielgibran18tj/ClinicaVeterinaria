@@ -33,7 +33,7 @@ public class Mascota {
     private Integer edad;
 
     @OneToMany(mappedBy = "mascota", fetch = FetchType.EAGER)
-    private List<Consulta> idConsultaMascota;
+    private List<Consulta> idConsulta;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente", insertable = false, updatable = false)
