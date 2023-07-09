@@ -28,4 +28,8 @@ public class EmpleadoServicio {
     public boolean exists(int idEmpleado){
         return this.empleadoRepository.existsById(idEmpleado);
     }
+
+    public void delete(int id){
+        this.empleadoRepository.deleteById(id);
+    }
 }

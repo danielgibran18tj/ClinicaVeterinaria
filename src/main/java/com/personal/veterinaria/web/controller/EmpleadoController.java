@@ -37,4 +37,13 @@ public class EmpleadoController {
             return ResponseEntity.ok(this.empleadoServicio.save(empleado));
         }
         return ResponseEntity.badRequest().build();    }
+
+    @DeleteMapping("/{idEmpleado}")
+    public ResponseEntity<Void> delete(@PathVariable int idEmpleado){
+        if (this.empleadoServicio.exists(idEmpleado)){
+            this.empleadoServicio.delete(idEmpleado);
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.badRequest().build();
+    }
 }
