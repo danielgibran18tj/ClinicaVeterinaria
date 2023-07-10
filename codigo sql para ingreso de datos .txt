@@ -1,0 +1,69 @@
+
+INSERT INTO cliente (direccion, email, nombre, numero_celular, id_cliente)
+VALUES
+    ('Calle Principal 1', 'cliente1@example.com', 'Cliente 1', '555-1111', 123406789),
+    ('Avenida Central 2', 'cliente2@example.com', 'Cliente 2', '555-2222', 987604321),
+    ('Avenida Secundaria 3', 'cliente3@example.com', 'Cliente 3', '555-3333', 604321987),
+    ('Calle Secundaria 4', 'cliente4@example.com', 'Cliente 4', '555-4444', 789054123),
+    ('Calle Principal 1', 'cliente5@example.com', 'Cliente 5', '555-5555', 456709123),
+    ('Avenida Central 2', 'cliente6@example.com', 'Cliente 6', '555-6666', 987103456),
+    ('Avenida Secundaria 3', 'cliente7@example.com', 'Cliente 7', '555-7777', 301654987),
+    ('Calle Secundaria 4', 'cliente8@example.com', 'Cliente 8', '555-8888', 741052963),
+    ('Calle Principal 1', 'cliente9@example.com', 'Cliente 9', '555-9999', 159703468),
+    ('Avenida Central 2', 'cliente10@example.com', 'Cliente 10', '555-0000', 360258147);
+
+
+INSERT INTO mascota (animal, edad, nombre, raza, id_cliente)
+VALUES
+    ('Perro', 3, 'Max', 'Labrador', 987103456),
+    ('Gato', 2, 'Luna', 'Siames', 987604321),
+    ('Perro', 5, 'Buddy', 'Golden Retriever', 741052963),
+    ('Gato', 1, 'Simba', 'Persa', 301654987),
+    ('Perro', 4, 'Rocky', 'Bulldog', 360258147),
+    ('Gato', 2, 'Milo', 'Bengala', 987103456),
+    ('Perro', 6, 'Coco', 'Chihuahua', 789054123),
+    ('Gato', 3, 'Mia', 'Ragdoll', 789054123),
+    ('Perro', 2, 'Lola', 'Poodle', 159703468),
+    ('Gato', 4, 'Oliver', 'Maine Coon', 360258147),
+    ('Loro', 1, 'Paco', 'Amazonas', 604321987),
+    ('Conejo', 2, 'Bunny', 'Holandés', 159703468),
+    ('Tortuga', 3, 'Toby', 'Leopardina', 456709123),
+    ('Loro', 4, 'Kiwi', 'Cacatúa', 159703468),
+    ('Conejo', 1, 'Floppy', 'Rex', 987604321),
+    ('Tortuga', 5, 'Sheldon', 'Tortuga de orejas rojas', 789054123);
+
+INSERT INTO sucursal (direccion, email, nombre, numero_celular)
+VALUES
+    ('Calle Principal 123', 'sucursal1@example.com', 'Sucursal 1', '555-1234'),
+    ('Avenida Central 456', 'sucursal2@example.com', 'Sucursal 2', '555-5678'),
+    ('Avenida Secundaria 789', 'sucursal3@example.com', 'Sucursal 3', '555-4321'),
+    ('Calle Secundaria 321', 'sucursal4@example.com', 'Sucursal 4', '555-8765');
+
+
+INSERT INTO empleado (id_empleado, direccion, nombre, numero_celular, puesto, id_sucursal)
+VALUES
+    (123456789, 'Calle Principal 123', 'Juan Pérez', '555-1234', 'Veterinario', 1),
+    (987654321, 'Avenida Central 456', 'María Gómez', '555-5678', 'Asistente', 2),
+    (654321987, 'Avenida Secundaria 789', 'Carlos Rodríguez', '555-4321', 'Recepcionista', 3),
+    (789654123, 'Calle Secundaria 321', 'Laura Torres', '555-8765', 'Administrador', 4),
+    (456789123, 'Avenida Principal 987', 'Pedro Sánchez', '555-2345', 'Veterinario', 1),
+    (987123456, 'Calle Central 654', 'Ana López', '555-7890', 'Asistente', 2),
+    (321654987, 'Avenida Terciaria 321', 'Luisa Ramírez', '555-6789', 'Recepcionista', 3),
+    (741852963, 'Avenida Cuarta 987', 'Diego Hernández', '555-3456', 'Administrador', 4),
+    (159753468, 'Calle Quinta 654', 'Sofía Medina', '555-9012', 'Veterinario', 1),
+    (369258147, 'Avenida Secundaria 321', 'Gabriela Vargas', '555-4567', 'Asistente', 2);
+
+INSERT INTO consulta (id_empleado, id_mascota, antecedente, fecha)
+VALUES
+    (123456789, 1, 'Vacunación anual', '2023-01-15 09:30:00'),
+    (987654321, 2, 'Dolor de estómago', '2023-02-18 14:45:00'),
+    (654321987, 3, 'Corte de uñas', '2023-03-22 11:15:00'),
+    (789654123, 4, 'Control de peso', '2023-04-11 16:30:00'),
+    (456789123, 5, 'Desparasitación', '2023-05-03 10:00:00'),
+    (987123456, 6, 'Vacunación antirrábica', '2023-06-05 15:45:00'),
+    (321654987, 7, 'Revisión dental', '2023-07-10 13:30:00'),
+    (741852963, 8, 'Cambio de dieta', '2023-08-19 12:00:00'),
+    (159753468, 9, 'Examen de sangre', '2023-09-25 09:15:00'),
+    (369258147, 10, 'Consulta de rutina', '2023-10-30 14:00:00');
+
+
