@@ -1,6 +1,7 @@
 package com.personal.veterinaria.service;
 
 import com.personal.veterinaria.entity.Consulta;
+import com.personal.veterinaria.entity.MascotaEmpleadoId;
 import com.personal.veterinaria.repository.ConsultaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,4 +22,19 @@ public class ConsultaServicio {
         return consultas;
     }
 
+    public Consulta save(Consulta consulta){
+        return this.consultaRepositorio.save(consulta);
+    }
+
+    public boolean exists(MascotaEmpleadoId idConsulta){
+        return this.consultaRepositorio.existsById(idConsulta);
+    }
+
+    /*public void delete(int idMascota){
+        this.consultaRepositorio.deleteById(idMascota);
+    }*/
+
+    public void deleteConsultaById(MascotaEmpleadoId id) {
+        consultaRepositorio.deleteById(id);
+    }
 }

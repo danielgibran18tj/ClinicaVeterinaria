@@ -30,7 +30,7 @@ public class Cliente {
     private String email;
 
     // Relación 1 a muchos con Mascota
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Mascota> idMascota;
 
 }

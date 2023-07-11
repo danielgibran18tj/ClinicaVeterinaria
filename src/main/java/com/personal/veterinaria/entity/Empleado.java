@@ -31,7 +31,7 @@ public class Empleado {
     @Column(length = 30, nullable = false)
     private String puesto;
 
-    @OneToMany(mappedBy = "empleado")
+    @OneToMany(mappedBy = "empleado", cascade = CascadeType.ALL)
     private List<Consulta> idConsulta;
 
     // Relación muchos a uno con Sucursal

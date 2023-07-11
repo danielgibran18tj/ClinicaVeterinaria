@@ -59,7 +59,7 @@ public class EmpleadoController {
         }
         return ResponseEntity.badRequest().build();    }
 
-    @Operation(summary = "Eliminar un nuevo empleado por ID")
+    @Operation(summary = "Eliminar un empleado por ID")
     @DeleteMapping("/{idEmpleado}")
     public ResponseEntity<Void> delete(@PathVariable int idEmpleado){
         if (this.empleadoServicio.exists(idEmpleado)){
