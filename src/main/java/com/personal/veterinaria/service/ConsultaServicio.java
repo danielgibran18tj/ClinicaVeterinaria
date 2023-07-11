@@ -30,10 +30,6 @@ public class ConsultaServicio {
         return this.consultaRepositorio.existsById(idConsulta);
     }
 
-    /*public void delete(int idMascota){
-        this.consultaRepositorio.deleteById(idMascota);
-    }*/
-
     public void deleteConsultaById(MascotaEmpleadoId id) {
         consultaRepositorio.deleteById(id);
     }

@@ -65,12 +65,4 @@ public class ConsultaController {
         consultaServicio.deleteConsultaById(id);
         return ResponseEntity.noContent().build();
     }
-    /*@DeleteMapping("/{idMascota}")
-    public ResponseEntity<Void> delete(@PathVariable int idMascota){
-        if (this.consultaServicio.exists(idMascota)) {
-            this.consultaServicio.delete(idMascota);
-            return ResponseEntity.ok().build();
-        }
-        return ResponseEntity.badRequest().build();
-    }*/
 }
