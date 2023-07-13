@@ -33,4 +33,11 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Mascota> idMascota;
 
+    /*public Cliente(Integer idCliente, String nombre, String direccion, String numeroCelular, String email) {
+        this.idCliente = idCliente;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.numeroCelular = numeroCelular;
+        this.email = email;
+    }*/
 }
